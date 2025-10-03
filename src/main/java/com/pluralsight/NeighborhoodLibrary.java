@@ -42,7 +42,7 @@ public class NeighborhoodLibrary {
                 case "a":
                     boolean subMenu = true;
                     showAvailable(libraryInventory);
-                    System.out.println("Would you like to check out a book? . ★⋆.\n    [Y] Yes\n    [N] No\nType here: ");
+                    System.out.print("Would you like to check out a book? . ★⋆.\n    [Y] Yes\n    [N] No\nType here: ");
                     String choiceCheck = scanner.nextLine().trim().toLowerCase();
                     while (subMenu){
                         switch (choiceCheck){
@@ -88,7 +88,7 @@ public class NeighborhoodLibrary {
 
                     break;
                 case "x":
-                    System.out.println("˚　.　　 . ✦　　˚　　 . ★⋆.　　　.\nClosing! Have a Space-Tastic Time Reading!\n✦　　.　　.　　　✦　˚ 　　˚　.");
+                    System.out.println("˚　.　　 . ✦　　˚　　 . ★⋆.　　　.\nClosing! Have a SPACE-TASTIC time reading!\n✦　　.　　.　　　✦　˚ 　　˚　.");
                     System.exit(0);
                     scanner.close();
                     break;
@@ -132,10 +132,12 @@ public class NeighborhoodLibrary {
             String bookTitle = scanner.nextLine().trim().toLowerCase();
             for (Book book:libraryInventory){
                 if (book.getTitle().toLowerCase().contains(bookTitle)){
-                    System.out.printf("%s by %s found and added!",book.getTitle(),book.getAuthor()); //I don't have time for another y or n to add but that would be ideal
+                    System.out.printf("%s by %s was found and added to your cart! ",book.getTitle(),book.getAuthor()); //I don't have time for another y or n to add but that would be ideal
                     book.setCheckedOutTo(userName);
                     book.setCheckedOut(true);
                     cart[i]= book;
+                }else{
+                    System.out.println("I don't recognize that title, sorry!. ✦");
                 }
             }
             i++;
