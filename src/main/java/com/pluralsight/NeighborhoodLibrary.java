@@ -136,8 +136,6 @@ public class NeighborhoodLibrary {
                     book.setCheckedOutTo(userName);
                     book.setCheckedOut(true);
                     cart[i]= book;
-                }else{
-                    System.out.println("I don't recognize that title, sorry!. ✦");
                 }
             }
             i++;
