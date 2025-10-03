@@ -170,6 +170,7 @@ public class NeighborhoodLibrary {
 
             System.out.println("What is the ID of the book?");
             int bookID = scanner.nextInt();
+            scanner.nextLine();
             for (Book book:libraryInventory){
                 if (book.getId() == bookID){
                     book.setCheckedOutTo("userName");
